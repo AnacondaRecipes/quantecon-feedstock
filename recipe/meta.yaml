@@ -22,11 +22,11 @@ requirements:
   run:
     - python
     - numpy
-    - scipy
+    - scipy >=1.0.0
     - matplotlib-base
     - pandas
     - sympy
-    - numba
+    - numba >=0.38
     - requests
     - nose
     - pytables
@@ -44,7 +44,7 @@ test:
 about:
   home: https://github.com/QuantEcon/QuantEcon.py
   license: BSD-3-Clause
-  license_file: LICENSE.txt
+  license_file: 
   summary: QuantEcon is a package to support all forms of quantitative economic modelling.
   description: |
     **QuantEcon** is an organization run by economists for economists with the aim of coordinating
