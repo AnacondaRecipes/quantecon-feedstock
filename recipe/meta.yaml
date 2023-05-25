@@ -21,7 +21,7 @@ requirements:
     - pip
     - setuptools
     - wheel
-    - flit-core
+    - flit-core == 3.8.0
   run:
     - python
     - numpy >=1.17.0
@@ -47,7 +47,7 @@ test:
     - pip check
 
 about:
-  home: https://github.com/QuantEcon/QuantEcon.py
+  home: https://quantecon.org/quantecon-py/
   license_url: https://github.com/QuantEcon/QuantEcon.py/blob/v{{ version }}/LICENSE
   license_family: BSD
   license: BSD-3-Clause
