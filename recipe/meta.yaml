@@ -26,13 +26,11 @@ requirements:
     - python
     - numpy >=1.17.0
     - scipy >=1.5.0
-    - matplotlib-base
     - pandas
     - sympy
     - numba >=0.49.0
     - requests
-    - nose
-    - pytables
+    - cython
 
 
 test:
@@ -43,9 +41,16 @@ test:
     - quantecon.markov
     - quantecon.random
     - quantecon.util
+  requires:
+    - pip
+    - pytest
+  commands:
+    - pip check
 
 about:
   home: https://github.com/QuantEcon/QuantEcon.py
+  license_url: https://github.com/QuantEcon/QuantEcon.py/blob/v{{ version }}/LICENSE
+  license_family: BSD
   license: BSD-3-Clause
   summary: QuantEcon is a package to support all forms of quantitative economic modelling.
   description: |
@@ -58,7 +63,7 @@ about:
     The [repository](https://github.com/QuantEcon/QuantEcon.py>) includes the *conda-forge* build recipe for the *quantecon* python package.
 
     **Note:** There is also a Julia version available for Julia users [QuantEcon.jl](https://github.com/QuantEcon/QuantEcon.jl)
-  doc_url: http://quanteconpy.readthedocs.io/en/latest/
+  doc_url: https://quanteconpy.readthedocs.io/en/latest/
   dev_url: https://github.com/QuantEcon/QuantEcon.py
 
 extra:
