@@ -13,7 +13,7 @@ source:
 build:
   number: 0
   script: {{ PYTHON }} -m pip install . --no-deps --no-build-isolation -vv
-  skip: true  # [py<37]
+  skip: true  # [py<37 or s390x]
 
 requirements:
   host:
@@ -30,7 +30,6 @@ requirements:
     - sympy
     - numba >=0.49.0
     - requests
-    - cython
 
 
 test:
