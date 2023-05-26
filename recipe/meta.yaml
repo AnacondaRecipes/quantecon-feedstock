@@ -14,6 +14,7 @@ build:
   number: 0
   script: {{ PYTHON }} -m pip install . --no-deps --no-build-isolation -vv
   skip: true  # [py<37 or s390x]
+  # blosc2 is a dependency that is required for s390x but it is not available.
 
 requirements:
   host:
