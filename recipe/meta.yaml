@@ -47,6 +47,7 @@ about:
   license_url: https://github.com/QuantEcon/QuantEcon.py/blob/v{{ version }}/LICENSE
   license_family: BSD
   license: BSD-3-Clause
+  license_file: LICENSE
   summary: QuantEcon is a package to support all forms of quantitative economic modelling.
   description: |
     **QuantEcon** is an organization run by economists for economists with the aim of coordinating
