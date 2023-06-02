@@ -1,5 +1,5 @@
-{% set version = "0.5.0" %}
-{% set sha256 = "5e49c2a23201924529533239ab999aca4f1380b7bf52ef3b2990ac652992b208" %}
+{% set version = "0.7.0" %}
+{% set sha256 = "23033eb1734aceb6f420b5727e6e4cb78b99bf2414584d4039dd1a0c93eaebf0" %}
 
 package:
   name: quantecon
@@ -12,24 +12,22 @@ source:
 
 build:
   number: 0
-  script: {{ PYTHON }} -m pip install . --no-deps -vv
-  skip: true  # [py<35]
+  script: {{ PYTHON }} -m pip install . --no-deps --no-build-isolation -vv
+  skip: true  # [py<37 or s390x]
+  # blosc2 is a dependency that is required for s390x but it is not available.
 
 requirements:
   host:
     - python
     - pip
+    - flit-core 3.8.0
   run:
     - python
-    - numpy
-    - scipy >=1.0.0
-    - matplotlib-base
-    - pandas
+    - numpy >=1.17.0
+    - scipy >=1.5.0
     - sympy
-    - numba >=0.38
+    - numba >=0.49.0
     - requests
-    - nose
-    - pytables
 
 
 test:
@@ -40,11 +38,16 @@ test:
     - quantecon.markov
     - quantecon.random
     - quantecon.util
+  requires:
+    - pip
+  commands:
+    - pip check
 
 about:
-  home: https://github.com/QuantEcon/QuantEcon.py
+  home: https://quantecon.org/quantecon-py/
+  license_family: BSD
   license: BSD-3-Clause
-  license_file: LICENSE.txt 
+  license_file: LICENSE
   summary: QuantEcon is a package to support all forms of quantitative economic modelling.
   description: |
     **QuantEcon** is an organization run by economists for economists with the aim of coordinating
@@ -56,7 +59,7 @@ about:
     The [repository](https://github.com/QuantEcon/QuantEcon.py>) includes the *conda-forge* build recipe for the *quantecon* python package.
 
     **Note:** There is also a Julia version available for Julia users [QuantEcon.jl](https://github.com/QuantEcon/QuantEcon.jl)
-  doc_url: http://quanteconpy.readthedocs.io/en/latest/
+  doc_url: https://quanteconpy.readthedocs.io/en/latest/
   dev_url: https://github.com/QuantEcon/QuantEcon.py
 
 extra:
