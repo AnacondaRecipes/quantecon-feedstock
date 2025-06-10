@@ -19,7 +19,7 @@ requirements:
   host:
     - python
     - pip
-    - flit-core 3.8.0
+    - flit-core >=3.8.0
   run:
     - python
     - numpy >=1.17.0
