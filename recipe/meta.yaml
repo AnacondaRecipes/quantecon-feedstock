@@ -1,5 +1,5 @@
 {% set name = "QuantEcon" %}
-{% set version = "0.7.0" %}
+{% set version = "0.10.1" %}
 
 package:
   name: {{ name|lower }}
@@ -10,9 +10,9 @@ source:
   sha256: 23033eb1734aceb6f420b5727e6e4cb78b99bf2414584d4039dd1a0c93eaebf0
 
 build:
-  number: 1
+  number: 0
   script: {{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation
-  skip: True  # [py<37]
+  skip: true  # [py<37]
 
 requirements:
   host:
