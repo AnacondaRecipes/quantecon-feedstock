@@ -6,8 +6,8 @@ package:
   version: {{ version }}
 
 source:
-  url: https://github.com/QuantEcon/QuantEcon.py/archive/refs/tags/v0.7.0.tar.gz
-  sha256: 23033eb1734aceb6f420b5727e6e4cb78b99bf2414584d4039dd1a0c93eaebf0
+  url: https://github.com/{{ name }}/{{ name }}.py/archive/refs/tags/v{{ version }}.tar.gz
+  sha256: 5cb11400db0ef8eeed536f3cd0e546e71250f1132b789af1cb18377b9539756c
 
 build:
   number: 0
@@ -35,14 +35,14 @@ test:
     - quantecon.markov
     - quantecon.random
     - quantecon.util
-  commands:
-    - pip check
-    - python -c "from importlib.metadata import version; assert(version('{{ name }}')=='{{ version }}')"
-    - pytest --pyargs quantecon.tests
   requires:
     - pip
     - pytest
     - pandas
+  commands:
+    - pip check
+    - python -c "from importlib.metadata import version; assert(version('{{ name }}')=='{{ version }}')"
+    - pytest --pyargs quantecon.tests
 
 about:
   home: https://quantecon.org/quantecon-py
