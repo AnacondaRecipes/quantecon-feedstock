@@ -1,5 +1,5 @@
 {% set name = "QuantEcon" %}
-{% set version = "0.10.1" %}
+{% set version = "0.11.4" %}
 
 package:
   name: {{ name|lower }}
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://github.com/{{ name }}/{{ name }}.py/archive/refs/tags/v{{ version }}.tar.gz
-  sha256: 5cb11400db0ef8eeed536f3cd0e546e71250f1132b789af1cb18377b9539756c
+  sha256: 91e56c5ed803ec1d9651402c3fa46f0a8de4e54559ee8d604ba04005e413538f
 
 build:
   number: 0
